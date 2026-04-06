@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your name">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../static/script.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <h1>Explore</h1>
+        </header>
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Buy Tickets</a>
+            <a href="checkout.html">Checkout</a>
+            <button id="hamburger" onclick="toggleNav()">☰</button>
+        </nav>
+        <main class="main">
+            <img id="logo" src="../static/MonoMuse.png" alt="MonoMuse Museum Logo">
+            <h2>Mission Statement</h2>
+            <p>MonoMuse serves to preserve the history of artistic innovation. We exhibit the progression of tools used by artists, from prehistoric paintbrushes to modern-day technology. When visiting MonoMuse, we hope our visitors are inspired by how innovations can revolutionize the way humans express ideas through art.</p>
+            <h2>Target Visitors</h2>
+            <ol>
+                <li>Artists</li>
+                <li>History enthusiasts</li>
+                <li>Anyone who enjoys learning!</li>
+            </ol>
+            <h2>MonoMuse Founders</h2>
+            <ul>
+                <li>Scrooge McDuck</li>
+                <li>Donald Duck</li>
+                <li>Atin Mathur</li>
+                <li>Captain Hook</li>
+            </ul>
+            <iframe src="https://www.youtube.com/embed/hPge9W1emZI?si=uInZn643AgHwHPRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div id="map"></div>
+        </main>
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>
