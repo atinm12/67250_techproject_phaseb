@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your name">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse — Checkout</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <!-- nav -->
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Buy Tickets</a>
+            <a href="checkout.html">Checkout</a>
+            <button id="hamburger" onclick="toggleNav()">&#9776;</button>
+        </nav>
+        <main class="main">
+            <!-- checkout form — goes to confirmation.html on submit -->
+            <form onsubmit="handleSubmit(event)">
+                <label for="name">Name (required)</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email (required)</label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- date picker -->
+                <label for="visitDate">Visit Date (required)</label>
+                <input type="date" id="visitDate" name="visitDate" required>
+
+                <!-- price updates automatically when this changes -->
+                <label for="ticketType">Ticket Type (required)</label>
+                <select id="ticketType" name="ticketType" required>
+                    <option value="">-- Select Ticket Type --</option>
+                    <option value="general">General ($18)</option>
+                    <option value="student">Student ($18)</option>
+                    <option value="member">Member ($18)</option>
+                </select>
+
+                <label for="quantity">Ticket Quantity (required)</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+
+                <!-- optional, must be 5 digits if filled in -->
+                <label for="zipCode">Zip Code (optional)</label>
+                <input type="text" id="zipCode" name="zipCode" maxlength="5" pattern="[0-9]{5}" title="Zip code must be exactly 5 digits" placeholder="e.g. 15213">
+
+                <!-- total updates automatically via script.js -->
+                <label>Total Amount</label>
+                <div id="totalBox" class="total-box">$0.00</div>
+
+                <div class="waitlist-row">
+                    <input type="checkbox" id="mailingList" name="mailingList">
+                    <label for="mailingList" class="checkbox-label">Join our waiting list</label>
+                </div>
+
+                <button type="submit">Place Order</button>
+            </form>
+            <div class="ticket-reminder">
+                Click <span class="highlight">Buy Tickets</span> in the navigation to view ticket options.
+            </div>
+        </main>
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>
